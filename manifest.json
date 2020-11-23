@@ -1,0 +1,23 @@
+{
+	"required_api_version": "^2.0.0",
+	"name": "YouTube Search Extension",
+	"description": "Search for Youtube Videos",
+	"developer_name": "Norberto Garcia Marin",
+	"icon": "images/icon.png",
+	"options": {
+		"query_debounce": 0.25
+	},
+	"preferences": [{
+		"id": "youtube_search_extension",
+		"type": "keyword",
+		"name": "Youtube Search",
+		"description": "Search for youtube videos",
+		"default_value": "yt"
+	}, {
+		"id": "description_template",
+		"type": "text",
+		"name": "Descrption Template",
+		"description": "Information about video (duration, date, views, channel, url, id)",
+		"default_value": "{duration} • {views} • {channel} • {date}"
+	}]
+}
