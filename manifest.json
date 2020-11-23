@@ -1,8 +1,8 @@
 {
 	"required_api_version": "^2.0.0",
-	"name": "YouTube Search Extension",
-	"description": "Search for Youtube Videos",
-	"developer_name": "Norberto Garcia Marin",
+	"name": "Youtube Search",
+	"description": "Search videos on Youtube",
+	"developer_name": "Samy NASTUZZI",
 	"icon": "images/icon.png",
 	"options": {
 		"query_debounce": 0.25
