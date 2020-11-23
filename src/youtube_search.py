@@ -14,6 +14,7 @@ BASE_URL = 'https://youtube.com'
 
 class YoutubeSearch():
     def __init__(self, params):
+        self.show_thumbnails = None
         self.query = ' '.join(params)
 
         clear_thumbnails()
@@ -44,7 +45,7 @@ class YoutubeSearch():
                 thumbnail = video_data.get("thumbnail", {}).get("thumbnails", [{}])[0].get("url", None)
                 thumbnail_path = None
 
-                if thumbnail:
+                if self.show_thumbnails and thumbnail:
                     thumbnail_path = save_thumbnail(thumbnail, video_id)
 
                 results.append({

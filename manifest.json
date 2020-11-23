@@ -19,5 +19,12 @@
 		"name": "Descrption Template",
 		"description": "Information about video (duration, date, views, channel, url, id)",
 		"default_value": "{duration} • {views} • {channel} • {date}"
+	}, {
+		"id": "show_thumbnails",
+		"type": "select",
+		"name": "Show thumbnails",
+		"description": "Could take a little more time to load results",
+		"options": ["true", "false"],
+		"default_value": "true"
 	}]
 }

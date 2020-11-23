@@ -22,9 +22,12 @@ class KeywordQueryEventListener(EventListener):
         if len(query.strip()) == 0:
             return RenderResultListAction(no_input_item())
 
-        params = strip_list(query.split(' '))
+        params = strip_list(query.split(' '))            
 
         search = YoutubeSearch(params)
+
+        if extension.preferences['show_thumbnails'] == 'true' and search.show_thumbnails is None:
+            search.show_thumbnails = True
 
         if not search.has_query():
             return RenderResultListAction(show_used_args(parser))
