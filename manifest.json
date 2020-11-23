@@ -5,7 +5,7 @@
 	"developer_name": "Samy NASTUZZI",
 	"icon": "images/icon.png",
 	"options": {
-		"query_debounce": 0.25
+		"query_debounce": 0.5
 	},
 	"preferences": [{
 		"id": "youtube_search_extension",

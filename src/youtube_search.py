@@ -2,6 +2,8 @@ import urllib.parse
 import requests
 import json
 
+from src.functions import clear_thumbnails, save_thumbnail
+
 
 MAX_RESULTS = 10
 
@@ -13,6 +15,8 @@ BASE_URL = 'https://youtube.com'
 class YoutubeSearch():
     def __init__(self, params):
         self.query = ' '.join(params)
+
+        clear_thumbnails()
 
 
     def has_query(self):
@@ -36,10 +40,16 @@ class YoutubeSearch():
             res = {}
             if "videoRenderer" in video.keys():
                 video_data = video.get("videoRenderer", {})
+                video_id = video_data.get("videoId", None)
+                thumbnail = video_data.get("thumbnail", {}).get("thumbnails", [{}])[0].get("url", None)
+                thumbnail_path = None
+
+                if thumbnail:
+                    thumbnail_path = save_thumbnail(thumbnail, video_id)
 
                 results.append({
-                    'id': video_data.get("videoId", None),
-                    'thumbnail': video_data.get("thumbnail", {}).get("thumbnails", [{}])[0].get("url", None),
+                    'id': video_id,
+                    'thumbnail': thumbnail_path,
                     'title': video_data.get("title", {}).get("runs", [[{}]])[0].get("text", None),
                     'channel': video_data.get("longBylineText", {}).get("runs", [[{}]])[0].get("text", None),
                     'date': video_data.get("publishedTimeText", {}).get("simpleText"),
@@ -47,5 +57,5 @@ class YoutubeSearch():
                     'views': video_data.get("viewCountText", {}).get("simpleText", 0),
                     'url': BASE_URL + video_data.get("navigationEndpoint", {}).get("commandMetadata", {}).get("webCommandMetadata", {}).get("url", None)
                 })
-        
+
         return results

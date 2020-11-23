@@ -36,7 +36,7 @@ def generate_description(template, search):
 
 def generate_search_item(search, description_template):
     return ExtensionResultItem(
-        icon=ICON_FILE,
+        icon=search['thumbnail'],
         name=search['title'],
         description=generate_description(description_template, search),
         on_enter=OpenUrlAction(search['url'])
