@@ -2,7 +2,8 @@ import os
 import glob
 import urllib.request
 
-THUMBNAILS_DIR = 'thumbnails/'
+EXTENSION_DIR = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
+THUMBNAILS_DIR = EXTENSION_DIR + '/thumbnails/'
 
 
 def strip_list(elements):
