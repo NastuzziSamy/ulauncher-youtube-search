@@ -20,6 +20,9 @@ def clear_thumbnails():
 def save_thumbnail(url, video_id):
     path = THUMBNAILS_DIR + video_id + '.png'
 
+    if not os.path.exists(THUMBNAILS_DIR):
+        os.makedirs(THUMBNAILS_DIR)
+
     urllib.request.urlretrieve(url, path)
 
     return path
