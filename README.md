@@ -55,7 +55,7 @@ In Ulauncher's settings, you can custom some settings:
     - id: youtube video id
 
 - Show thumbnails: show thumbnails as icon
-  - default: true
+  - default: `true`
   - info: search may be slower with thumbnails
 
 ## Usage
