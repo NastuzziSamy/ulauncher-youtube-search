@@ -51,8 +51,8 @@ class YoutubeSearch():
                 results.append({
                     'id': video_id,
                     'thumbnail': thumbnail_path,
-                    'title': video_data.get("title", {}).get("runs", [[{}]])[0].get("text", None),
-                    'channel': video_data.get("longBylineText", {}).get("runs", [[{}]])[0].get("text", None),
+                    'title': video_data.get("title", {}).get("runs", [{}])[0].get("text", '').replace('&', 'and'),
+                    'channel': video_data.get("longBylineText", {}).get("runs", [{}])[0].get("text", None),
                     'date': video_data.get("publishedTimeText", {}).get("simpleText"),
                     'duration': video_data.get("lengthText", {}).get("simpleText", 0),
                     'views': video_data.get("viewCountText", {}).get("simpleText", 0),
