@@ -11,7 +11,8 @@ This is a Ulauncher extension to search on Youtube.
     - [Requirements](#requirements)
     - [Ulauncher's GUI](#ulaunchers-gui)
     - [Manually from source](#manually-from-source)
-  - [Configuration and usage](#configuration-and-usage)
+  - [Configuration](#configuration)
+  - [Usage](#usage)
   - [License](#license)
 
 ## Screenshot
@@ -37,7 +38,27 @@ The extensions' directory is located at: `$HOME/.local/share/ulauncher/extension
 
 Go to that location, and while being inside, just `git clone` this repository.
 
-## Configuration and usage
+## Configuration
+
+In Ulauncher's settings, you can custom some settings:
+- Keyword
+  - default: `yt`
+
+- Template: define how description must be generated based on video information
+  - default: `{duration} • {views} • {channel} • {date}`
+  - template keys:
+    - duration: video duration
+    - date: publication date
+    - views: views counter
+    - channel: channel publisher
+    - url: youtube video url
+    - id: youtube video id
+
+- Show thumbnails: show thumbnails as icon
+  - default: true
+  - info: search may be slower with thumbnails
+
+## Usage
 
 You can configure the trigger keyword and the popup's size in the extension's settings.
 
