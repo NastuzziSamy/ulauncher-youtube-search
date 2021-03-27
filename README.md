@@ -60,8 +60,6 @@ In Ulauncher's settings, you can custom some settings:
 
 ## Usage
 
-You can configure the trigger keyword and the popup's size in the extension's settings.
-
 To search on youtube, use the keyword (default is `yt`), then type/paste and wait for the extension to load.
 
 You will see the 10 top searches. Just click/press ENTER on one to see it on your default browser.
